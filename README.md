@@ -1,4 +1,4 @@
-# Raspberry-Pi-TF-Lite-Object-Detection
+# Guide
 Run object detection model on the Raspberry Pi
 **Intro**
 
