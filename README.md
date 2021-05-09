@@ -6,7 +6,7 @@ Using TensorFlow Lite with Python is great for embedded devices based on Linux, 
 
 This is the guide for installing TensorFlow Lite on the Raspberry Pi and running object detection models on it.
 
-##Step 1. Setting up Rasperry Pi##
+## Step 1. Setting up Rasperry Pi
 
 Upgrade Raspbian Stretch to Buster
 
@@ -90,7 +90,7 @@ pip3 install --upgrade setuptools
 
 ---
 
-**2. Making sure camera interface is enabled in the Raspberry Pi Configuration menu**
+## 2. Making sure camera interface is enabled in the Raspberry Pi Configuration menu
 
 Click the Pi icon in the top left corner of the screen, select Preferences -> Raspberry Pi Configuration, and go to the Interfaces tab and verify Camera is set to Enabled. If it isn't, enable it now, and reboot the Raspberry Pi.
 
@@ -143,7 +143,7 @@ This will create a folder called tfliteod-env inside the tflite1 directory. The 
 source tfliteod-env/bin/activate
 ```
 
-##Step 3. Set up TensorFlow Lite detection model
+## Step 3. Set up TensorFlow Lite detection model
 
 ---
 
@@ -165,7 +165,7 @@ unzip coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip -d Sample_model
 
 Done.
 
-##Step 4. Run the model
+## Step 4. Run the model
 
 ---
 
