@@ -6,7 +6,7 @@ Using TensorFlow Lite with Python is great for embedded devices based on Linux, 
 
 This is the guide for installing TensorFlow Lite on the Raspberry Pi and running object detection models on it.
 
-##Step 1. Setting up Rasperry Pi
+##Step 1. Setting up Rasperry Pi##
 
 Upgrade Raspbian Stretch to Buster
 
