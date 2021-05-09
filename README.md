@@ -1,5 +1,3 @@
-# Guide
-Run object detection model on the Raspberry Pi
 **Intro**
 
 ---
@@ -102,28 +100,20 @@ Converting Tensorflow to Tensorflow Lite
 
 Using TensorFlow Lite converter. It takes TensorFlow model and generates a TensorFlow Lite model (an optimized FlatBuffer format identified by the .tflite file extension).
 
-**Step 2. TensorFlow Lite Download and Setup**
+**Step 2. Install TF Lite dependecies and set up virtual environment**
 
 ---
 
-Install dependencies 
+clone this repo
 
 ```cpp
-sudo apt-get install -y libatlas-base-dev libhdf5-dev 
-libc-ares-dev libeigen3-dev build-essential 
-libsdl-ttf2.0-0 python-pygame festival python3-h5py
-```
-
-If this is too complicated to type in your shell, clone this repo
-
-```cpp
-git clone https://github.com/yanovsk
+git clone https://github.com/yanovsk/Raspberry-Pi-TF-Lite-Object-Detection
 ```
 
 rename the folder to "tfliteod"
 
 ```cpp
-mv TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi tfliteod
+mv Raspberry-Pi-TF-Lite-Object-Detection tfliteod
 cd tfliteod
 ```
 
@@ -132,3 +122,67 @@ run shell script to install get_pi_requirements
 ```cpp
 bash get_pi_req.sh
 ```
+
+Note: shell script will auto install the lastest version of Tensorflow. To install specific version of TF, run pip3 install tensorflow==x.xx (where x.xx stands for the version you want to install)
+
+### Set up virtual environment
+
+Install vitrtualenv
+
+```cpp
+pip3 install virtualenv 
+```
+
+Then, create the "tfliteod-env" virtual environment by issuing:
+
+```cpp
+python3 -m venv tfliteod-env
+```
+
+This will create a folder called tfliteod-env inside the tflite1 directory. The tfliteod-env folder will hold all the package libraries for this environment. Next, activate the environment by issuing:
+
+```cpp
+source tfliteod-env/bin/activate
+```
+
+**Step 3. Set up TensorFlow Lite detection model**
+
+---
+
+Once, tensorflow is install we can proceed to seting up the object detection model. 
+
+We can use either pre-trained model or train it on our end. For the simplicity sake let's use pre-trained [sample model by google](https://www.tensorflow.org/lite/examples/object_detection/overview)
+
+Download the sample model (also could be done thru direct link [here](https://tfhub.dev/tensorflow/lite-model/ssd_mobilenet_v1/1/metadata/1?lite-format=tflite))
+
+```cpp
+wget https://storage.googleapis.com/download.tensorflow.org/models/tflite/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip
+```
+
+upzip it 
+
+```cpp
+unzip coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip -d Sample_model
+```
+
+Done.
+
+**Step 4. Run the model**
+
+---
+
+Note: the model should work on either [Picamera module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) or any other webcam plugged in to the Raspberry Pi as a usb device. 
+
+From **home/pi/tfliteod** run the following command:
+
+```cpp
+python3 TFL_object_detection.py --modeldir=Sample_model
+```
+
+After initializing  webcam window should pop-up on your Raspebbery Pi and object detection should work.
+
+Note: this model can recongnize only 80 common objects (check labels.txt for more info on metadata)
+
+However, you can custom train the model [using this guide.](https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi#part-1---how-to-train-convert-and-run-custom-tensorflow-lite-object-detection-models-on-windows-10)
+
+Happy hacking!
