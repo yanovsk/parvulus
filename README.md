@@ -1,9 +1,9 @@
 ### Intro
 
 
-Using TensorFlow Lite with Python is great for embedded devices based on Linux, such as Raspberry Pi and Coral devices with Edge TPU, among many others. 
+Using TensorFlow Lite with Python is great for embedded devices based on Linux, such as Raspberry Pi.  
 
-This is the guide for installing TensorFlow Lite on the Raspberry Pi and running object detection models on it.
+This is the guide for installing TensorFlow Lite on the Raspberry Pi and running pre-trained object detection models on it.
 
 ## Step 1. Setting up Rasperry Pi
 
