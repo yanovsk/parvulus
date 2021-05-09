@@ -1,6 +1,5 @@
-**Intro**
+### Intro
 
----
 
 Using TensorFlow Lite with Python is great for embedded devices based on Linux, such as Raspberry Pi and Coral devices with Edge TPU, among many others. 
 
@@ -23,7 +22,7 @@ $ dpkg -C
 $ apt-mark showhold
 ```
 
-** Prepare apt-get Sources **
+**Prepare apt-get Sources**
 
 Update the sources to apt-get. This replaces “stretch” with “buster” in the repository locations giving apt-get access to the new version’s binaries.
 
@@ -88,9 +87,7 @@ and
 pip3 install --upgrade setuptools
 ```
 
----
-
-## 2. Making sure camera interface is enabled in the Raspberry Pi Configuration menu
+**2. Making sure camera interface is enabled in the Raspberry Pi Configuration menu**
 
 Click the Pi icon in the top left corner of the screen, select Preferences -> Raspberry Pi Configuration, and go to the Interfaces tab and verify Camera is set to Enabled. If it isn't, enable it now, and reboot the Raspberry Pi.
 
@@ -98,9 +95,7 @@ Converting Tensorflow to Tensorflow Lite
 
 Using TensorFlow Lite converter. It takes TensorFlow model and generates a TensorFlow Lite model (an optimized FlatBuffer format identified by the .tflite file extension).
 
-##Step 2. Install TF Lite dependecies and set up virtual environment
-
----
+## Step 2. Install TF Lite dependecies and set up virtual environment
 
 clone this repo
 
@@ -145,8 +140,6 @@ source tfliteod-env/bin/activate
 
 ## Step 3. Set up TensorFlow Lite detection model
 
----
-
 Once, tensorflow is install we can proceed to seting up the object detection model. 
 
 We can use either pre-trained model or train it on our end. For the simplicity sake let's use pre-trained [sample model by google](https://www.tensorflow.org/lite/examples/object_detection/overview)
@@ -163,11 +156,7 @@ upzip it
 unzip coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip -d Sample_model
 ```
 
-Done.
-
 ## Step 4. Run the model
-
----
 
 Note: the model should work on either [Picamera module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) or any other webcam plugged in to the Raspberry Pi as a usb device. 
 
