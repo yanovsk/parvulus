@@ -8,8 +8,6 @@ This is the guide for installing TensorFlow Lite on the Raspberry Pi and running
 
 **Step 1. Setting up Rasperry Pi**
 
----
-
 Upgrade Raspbian Stretch to Buster
 
 (If you on Buster, skip this step and simply run sudo apt-get update and sudo apt-get dist-upgrade)
